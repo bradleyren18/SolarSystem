@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -7,19 +6,11 @@ using Random = UnityEngine.Random;
 public class WorldScript : MonoBehaviour
 {
     readonly float G = 6.6743f * (float)Math.Pow(10, -11);
-    float deltaTime = 0.003f; 
+    public float deltaTime = 0.003f; 
     [SerializeField] private GameObject planetPrefab;
-    private Vector3 planetPosition = new Vector3(0, 0, 20);
+    readonly private Vector3 planetPosition = new Vector3(0, 0, 20);
         
     public List<PlanetData> planets = new List<PlanetData>();
-    // [SerializeField] private PlanetData planet;
-    // [SerializeField] private PlanetData planet2;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -28,11 +19,11 @@ public class WorldScript : MonoBehaviour
         {
             PlanetData planet = Instantiate(planetPrefab, planetPosition, Quaternion.identity).GetComponent<PlanetData>();
             planet.mass = Random.Range(10, 60);
-            planet.transform.localScale = new Vector3(planet.mass/10f, planet.mass/10f, planet.mass/10f);
-            planet.velocity = new Vector3(Random.Range(0, 100), Random.Range(0, 100), Random.Range(0, 100));
+            planet.transform.localScale = new Vector3(planet.mass/20f, planet.mass/20f, planet.mass/20f);
+            planet.velocity = new Vector3(Random.Range(10, 30), Random.Range(10, 30), Random.Range(10, 30));
             planets.Add(planet);    
         }
-        // deltaTime = Time.deltaTime;
+        
         updateAllPlanetVelocities();
         moveAllPlanets();
     }
@@ -59,9 +50,9 @@ public class WorldScript : MonoBehaviour
 
     void moveAllPlanets()
     {
-        for (int i = 0; i < planets.Count; i++)
+        foreach (var planetData in planets)
         {
-            movePlanet(planets[i]);
+            movePlanet(planetData);
         }
     }
 
@@ -73,15 +64,11 @@ public class WorldScript : MonoBehaviour
     float calculateForce(PlanetData planet, PlanetData planet2)
     {
         float distance = Vector3.Distance(planet.transform.position, planet2.transform.position);
-        
         float mass1 = planet.mass;
         float mass2 = planet2.mass;
         float compensate = (float)Math.Pow(10, 9);
-        
-                
         float scale = (float)(G*(mass1*mass2*compensate)/Math.Pow(distance, 2));
-        // Vector3 force = scale * direction;
-        Debug.Log($"{scale}: {distance}");
+        Debug.Log($"{planet.gameObject.name}, {planet2.gameObject.name} {scale}: {distance}");
         return scale;
     }
 }
