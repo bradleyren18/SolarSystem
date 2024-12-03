@@ -213,7 +213,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b0374305d6a02614c8b358de37b9e08b, type: 2}
+  - {fileID: 2100000, guid: 358546c89e62dbe4cb810ff7f0099da2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -333,7 +333,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d41b285e3209bd64994c87b228eaf03d, type: 2}
+  - {fileID: 2100000, guid: 2f28ecc077effd944be9ae9d6e759839, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -518,7 +518,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9a6400b666de5b4418ee3293c1242a72, type: 2}
+  - {fileID: 2100000, guid: 85a9cd25f6dbaca4983bc2f231aa485d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -626,6 +626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 864ac6d30a128fc40a9ac642a37c85f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deltaTime: 0.003
   planetPrefab: {fileID: 4855405035244009542, guid: 7005079aa0b15294380df51cb1a1d243, type: 3}
   planets:
   - {fileID: 1008387798}
@@ -815,7 +816,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8b4139c87f1a3204baca7d3af642b6c1, type: 2}
+  - {fileID: 2100000, guid: f26134da6ae1e044487e780f57f9eb7f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -906,7 +907,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d4663772745c0684490ba3e17e410421, type: 2}
+  - {fileID: 2100000, guid: 09fba0ab66421e14a845ea1c0498dc40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
